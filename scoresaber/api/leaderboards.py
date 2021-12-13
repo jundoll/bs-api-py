@@ -7,7 +7,7 @@ from scoresaber.parameters import SERVER
 
 
 # definition
-async def get_leaderboards(
+def get_leaderboards(
     #
     search: str = '',
     # Filter by verified (⚠️️deprecation notice)
@@ -67,22 +67,22 @@ async def get_leaderboards(
 
     # request
     request_url = f'{SERVER}/api/leaderboards{query}'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return LeaderboardInfoCollection.gen_list(response_dict)
 
 
-async def get_leaderboard_info_by_id(
+def get_leaderboard_info_by_id(
     # ScoreSaber leaderboardId
     leaderboardId: float
 ):
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-id/{leaderboardId}/info'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return LeaderboardInfo.gen(response_dict)
 
 
-async def get_leaderboard_info_by_hash(
+def get_leaderboard_info_by_hash(
     # Map hash
     hash: str,
     # (1 = Easy, 3 = Normal, 5 = Hard, 7 = Expert, 9 = Expert+)
@@ -104,11 +104,11 @@ async def get_leaderboard_info_by_hash(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-hash/{hash}/info{query}'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return LeaderboardInfo.gen(response_dict)
 
 
-async def get_leaderboard_scores_by_id(
+def get_leaderboard_scores_by_id(
     # ScoreSaber leaderboardId
     leaderboardId: float,
     # Filter by ISO 3166-1 alpha-2 code (comma delimitered)
@@ -138,11 +138,11 @@ async def get_leaderboard_scores_by_id(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-id/{leaderboardId}/scores{query}'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return ScoreCollection.gen(response_dict)
 
 
-async def get_leaderboard_scores_by_hash(
+def get_leaderboard_scores_by_hash(
     # Map hash
     hash: str,
     # (1 = Easy, 3 = Normal, 5 = Hard, 7 = Expert, 9 = Expert+)
@@ -180,16 +180,16 @@ async def get_leaderboard_scores_by_hash(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-hash/{hash}/scores{query}'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return ScoreCollection.gen(response_dict)
 
 
-async def get_leaderboard_difficulties_by_hash(
+def get_leaderboard_difficulties_by_hash(
     # Map hash
     hash: str
 ):
 
     # request
     request_url = f'{SERVER}/api/leaderboard/get-difficulties/{hash}'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return Difficulty.gen_list(response_dict)

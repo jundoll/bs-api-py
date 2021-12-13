@@ -6,7 +6,7 @@ from scoresaber.parameters import SERVER
 
 
 # definition
-async def get_players(
+def get_players(
     #
     search: str = '',
     #
@@ -33,11 +33,11 @@ async def get_players(
 
     # request
     request_url = f'{SERVER}/api/players{query}'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return PlayerCollection.gen(response_dict)
 
 
-async def get_players_count(
+def get_players_count(
     #
     search: str = '',
     # Filter by ISO 3166-1 alpha-2 code (comma delimitered)
@@ -57,33 +57,33 @@ async def get_players_count(
 
     # request
     request_url = f'{SERVER}/api/players/count{query}'
-    count_value = await api.get(request_url)
+    count_value = api.get(request_url)
     return count_value
 
 
-async def get_player_basic(
+def get_player_basic(
     #
     playerId: float
 ):
 
     # request
     request_url = f'{SERVER}/api/player/{playerId}/basic'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return Player.gen(response_dict)
 
 
-async def get_player_full(
+def get_player_full(
     #
     playerId: float
 ):
 
     # request
     request_url = f'{SERVER}/api/player/{playerId}/full'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return Player.gen(response_dict)
 
 
-async def get_player_scores(
+def get_player_scores(
     #
     playerId: float,
     # The amount of scores to return
@@ -113,5 +113,5 @@ async def get_player_scores(
 
     # request
     request_url = f'{SERVER}/api/player/{playerId}/scores{query}'
-    response_dict = await api.get(request_url)
+    response_dict = api.get(request_url)
     return PlayerScoreCollection.gen(response_dict)

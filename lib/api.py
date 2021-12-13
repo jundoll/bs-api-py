@@ -37,11 +37,11 @@ class Limiter:
         self.ratelimit_limit = limit
 
 
-async def get(
+async def call_get_request(
     request_url: str,
-    max_retries: int = 20,
-    sleep_wait: int = 5,
-    user_agent: str = ''
+    max_retries: int,
+    sleep_wait: int,
+    user_agent: str
 ):
 
     # init
@@ -77,3 +77,13 @@ async def get(
                 raise e
         else:
             return json.load(response)
+
+
+def get(
+    request_url: str,
+    max_retries: int = 20,
+    sleep_wait: int = 5,
+    user_agent: str = ''
+):
+    asyncio.run(call_get_request(
+        request_url, max_retries, sleep_wait, user_agent))
