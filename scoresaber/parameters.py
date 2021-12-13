@@ -1,1 +1,0 @@
-SERVER = 'https://scoresaber.com'
