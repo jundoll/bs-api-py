@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import Union
 
-from scoresaber.entity import LeaderboardPlayer
+import LeaderboardPlayer
 
 
 # definition class

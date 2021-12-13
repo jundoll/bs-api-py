@@ -1,7 +1,7 @@
 
 # load modules
-from lib import api
-from scoresaber.entity import (Difficulty, LeaderboardInfo,
+from ...lib import api
+from ..entity import (Difficulty, LeaderboardInfo,
                                LeaderboardInfoCollection, Player,
                                PlayerCollection, PlayerScoreCollection,
                                ScoreCollection)
@@ -209,6 +209,10 @@ def get_players(
     # (default true)
     withMetadata: bool = False
 ):
+    """
+    GET /api/players
+    """
+
     # prepare query
     query_list = []
     if search:

@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import List, Union
 
-from scoresaber.entity import Difficulty, Score
+import Difficulty, Score
 
 
 # definition class
