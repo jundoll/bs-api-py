@@ -1,7 +1,13 @@
 
+# change base directory
+import sys
+import pathlib
+current_dir = pathlib.Path(__file__).resolve().parent
+sys.path.append( str(current_dir) + '/../../' )
+
 # load modules
-from ...lib import api
-from ..entity import (Difficulty, LeaderboardInfo,
+from lib import api
+from scoresaber.entity import (Difficulty, LeaderboardInfo,
                                LeaderboardInfoCollection, Player,
                                PlayerCollection, PlayerScoreCollection,
                                ScoreCollection)
