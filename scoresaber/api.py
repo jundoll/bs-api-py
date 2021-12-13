@@ -2,7 +2,7 @@
 # load modules
 from lib import api
 
-from .entity import (Difficulty, LeaderboardInfo, LeaderboardInfoCollection,
+from entity import (Difficulty, LeaderboardInfo, LeaderboardInfoCollection,
                      Player, PlayerCollection, PlayerScoreCollection,
                      ScoreCollection)
 
