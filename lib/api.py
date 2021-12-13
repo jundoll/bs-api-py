@@ -85,5 +85,4 @@ def get(
     sleep_wait: int = 5,
     user_agent: str = ''
 ):
-    asyncio.run(call_get_request(
-        request_url, max_retries, sleep_wait, user_agent))
+    return asyncio.run(call_get_request(request_url, max_retries, sleep_wait, user_agent))
