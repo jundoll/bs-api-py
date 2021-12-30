@@ -1,7 +1,7 @@
 
 # load modules
-from ..entity import Player, PlayerCollection, PlayerScoreCollection
-from ..lib import request
+from scoresaber.entity import Player, PlayerCollection, PlayerScoreCollection
+from lib import request
 
 # const
 SERVER = 'https://scoresaber.com'
