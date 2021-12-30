@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import List, Union
 
-import Metadata, Player
+from . import Metadata, Player
 
 
 # definition class

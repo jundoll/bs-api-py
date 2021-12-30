@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import Union
 
-import LeaderboardPlayer
+from . import LeaderboardPlayer
 
 
 # definition class

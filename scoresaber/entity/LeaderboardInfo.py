@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import List, Union
 
-import Difficulty, Score
+from . import Difficulty, Score
 
 
 # definition class

@@ -1,8 +1,8 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='BSAPI',
-    version="1.0.0",
+    version="0.1.0",
     license='MIT',
     packages=['BSAPI.scoresaber'],
     package_dir={'BSAPI.scoresaber': 'scoresaber/api'}

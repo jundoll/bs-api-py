@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import Union
 
-import LeaderboardInfo, Score
+from . import LeaderboardInfo, Score
 
 
 # definition class

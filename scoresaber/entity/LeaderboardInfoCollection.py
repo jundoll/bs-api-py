@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import List, Union
 
-import LeaderboardInfo, Metadata
+from . import LeaderboardInfo, Metadata
 
 
 # definition class
@@ -14,7 +14,7 @@ class LeaderboardInfoCollection:
 
 
 # definition function
-def gen(response: dict):
+def gen(response):
 
     if response is not None:
         instance = LeaderboardInfoCollection(

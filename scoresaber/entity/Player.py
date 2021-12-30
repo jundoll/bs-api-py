@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import List, Union
 
-import Badge, ScoreStats
+from . import Badge, ScoreStats
 
 
 # definition class
