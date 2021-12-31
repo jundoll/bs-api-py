@@ -7,6 +7,13 @@ $ pip install git+https://github.com/jundoll/bs-api-py.git
 ```
 
 ### Use (sample)
+<!-- 
+#### beatsaver
+```python
+import BSAPI.beatsaver as beatsaver
+```
+-->
+
 #### scoresaber
 ```python
 import BSAPI.scoresaber as scoresaber
@@ -15,7 +22,23 @@ import BSAPI.scoresaber as scoresaber
 player_list = scoresaber.get_players()
 ```
 
+#### accsaber
+```python
+import BSAPI.accsaber as accsaber
+
+# get a result of request 'https://accsaber.com/api/players'
+player_list = accsaber.get_players()
+```
+
+
 ## Reference
+<!-- 
+### BeatSaver API docs
+https://api.beatsaver.com/docs/
+-->
+
 ### ScoreSaber API docs
 https://docs.scoresaber.com/
 
+### AccSaber github account
+https://github.com/accsaber
