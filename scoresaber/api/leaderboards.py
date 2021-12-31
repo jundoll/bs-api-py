@@ -1,8 +1,9 @@
 
 # load modules
-from lib import request
-from scoresaber.entity import (Difficulty, LeaderboardInfo,
-                               LeaderboardInfoCollection, ScoreCollection)
+from BSAPI.lib import request
+
+from ..entity import (Difficulty, LeaderboardInfo, LeaderboardInfoCollection,
+                      ScoreCollection)
 
 # const
 SERVER = 'https://scoresaber.com'
