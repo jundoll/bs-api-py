@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='BSAPI',
@@ -17,6 +17,6 @@ setup(
         'BSAPI.scoresaber.entity': 'scoresaber/entity'
     },
     install_requires = [
-        'requests-api-py @ git+ssh://git@github.com/jundoll/requests-api-py.git'
+        'requests-api-py@ git+https://github.com/jundoll/requests-api-py.git'
     ]
 )
