@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='BSAPI',
-    version="0.2.1",
+    version="0.2.2",
     license='MIT',
     packages=[
         'BSAPI.accsaber', 'BSAPI.accsaber.api', 'BSAPI.accsaber.entity',
