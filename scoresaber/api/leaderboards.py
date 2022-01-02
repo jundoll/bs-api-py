@@ -1,6 +1,6 @@
 
 # load modules
-from BSAPI.lib import request
+from requests_api import request
 
 from ..entity import (Difficulty, LeaderboardInfo, LeaderboardInfoCollection,
                       ScoreCollection)
