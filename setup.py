@@ -17,6 +17,6 @@ setup(
         'BSAPI.scoresaber.entity': 'scoresaber/entity'
     },
     install_requires = {
-        'git+https://github.com/jundoll/requests-api-py.git'
+        'requests_api @ git+https://github.com/jundoll/requests-api-py.git'
     }
 )
