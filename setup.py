@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='BSAPI',
-    version="0.2.2",
+    version="0.2.3",
     license='MIT',
     packages=[
         'BSAPI.accsaber', 'BSAPI.accsaber.api', 'BSAPI.accsaber.entity',
@@ -15,5 +15,8 @@ setup(
         'BSAPI.scoresaber': 'scoresaber',
         'BSAPI.scoresaber.api': 'scoresaber/api',
         'BSAPI.scoresaber.entity': 'scoresaber/entity'
+    },
+    install_requires = {
+        'git+https://github.com/jundoll/requests-api-py.git'
     }
 )
