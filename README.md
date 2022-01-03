@@ -11,23 +11,26 @@ $ pip install git+https://github.com/jundoll/bs-api-py.git
 #### beatsaver
 ```python
 import BSAPI.beatsaver as beatsaver
+import asyncio
 ```
 -->
 
 #### scoresaber
 ```python
 import BSAPI.scoresaber as scoresaber
+import asyncio
 
 # get a result of request 'https://scoresaber.com/api/players'
-player_list = scoresaber.get_players()
+player_list = asyncio.run(scoresaber.get_players())
 ```
 
 #### accsaber
 ```python
 import BSAPI.accsaber as accsaber
+import asyncio
 
 # get a result of request 'https://accsaber.com/api/players'
-player_list = accsaber.get_players()
+player_list = asyncio.run(accsaber.get_players())
 ```
 
 
