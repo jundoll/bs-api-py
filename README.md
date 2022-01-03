@@ -7,12 +7,14 @@ $ pip install git+https://github.com/jundoll/bs-api-py.git
 ```
 
 ### Use (sample)
-<!-- 
 #### beatsaver
 ```python
+coming soon
+```
+
+<!-- 
 import BSAPI.beatsaver as beatsaver
 import asyncio
-```
 -->
 
 #### scoresaber
@@ -35,10 +37,8 @@ player_list = asyncio.run(accsaber.get_players())
 
 
 ## Reference
-<!-- 
 ### BeatSaver API docs
 https://api.beatsaver.com/docs/
--->
 
 ### ScoreSaber API docs
 https://docs.scoresaber.com/
