@@ -1,10 +1,11 @@
 
 # load modules
+from common import USER_AGENT
 from requests_api import request
 
-from ..entity import Player, PlayerScore
+from ..entity import Player
 
-# init
+# const
 SERVER = 'https://accsaber.com'
 
 
@@ -12,38 +13,25 @@ SERVER = 'https://accsaber.com'
 async def get_players(
 ):
     """
-    GET /api/players
+    GET /leaderboards
     """
 
     # request
-    requestUrl = f'{SERVER}/api/players'
-    response_dict = await request.get(requestUrl)
+    request_url = f'{SERVER}/leaderboards'
+    response_dict = await request.get(request_url, user_agent=USER_AGENT)
     return Player.genList(response_dict)
 
 
 async def get_player(
-    #
+    # scoresaber ID
     playerId: float
 ):
     """
-    GET /api/players/{playerId}
+    GET /profile/{playerId}/overall/scores
     """
 
     # request
-    requestUrl = f'{SERVER}/api/players/{playerId}'
-    response_dict = await request.get(requestUrl)
+    request_url = f'{SERVER}/profile/{playerId}/overall/scores'
+    print(request_url)
+    response_dict = await request.get(request_url, user_agent=USER_AGENT)
     return Player.gen(response_dict)
-
-
-async def get_player_scores(
-    #
-    playerId: float
-):
-    """
-    GET /api/player/{playerId}/scores
-    """
-
-    # request
-    requestUrl = f'{SERVER}/api/player/{playerId}/scores'
-    response_dict = await request.get(requestUrl)
-    return PlayerScore.genList(response_dict)
