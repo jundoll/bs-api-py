@@ -6,7 +6,7 @@ setup(
     license='MIT',
     packages=[
         'BSAPI.beatsaver', 'BSAPI.beatsaver.api', 'BSAPI.beatsaver.entity',
-        'BSAPI.accsaber', 'BSAPI.accsaber.api', 'BSAPI.accsaber.entity',
+        'BSAPI.accsaber', 'BSAPI.accsaber.api', 'BSAPI.accsaber.entity', 'BSAPI.accsaber.fetcher',
         'BSAPI.scoresaber', 'BSAPI.scoresaber.api', 'BSAPI.scoresaber.entity'
     ],
     package_dir={
@@ -20,7 +20,7 @@ setup(
         'BSAPI.scoresaber.api': 'scoresaber/api',
         'BSAPI.scoresaber.entity': 'scoresaber/entity'
     },
-    install_requires = [
+    install_requires=[
         'requests-api-py@ git+https://github.com/jundoll/requests-api-py.git'
     ]
 )

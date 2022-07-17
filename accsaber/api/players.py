@@ -1,7 +1,8 @@
 
 # load modules
+import requests
+from bs4 import BeautifulSoup
 from common import USER_AGENT
-from requests_api import request
 
 from ..entity import Player
 
@@ -10,19 +11,20 @@ SERVER = 'https://accsaber.com'
 
 
 # definition
-async def get_players(
+def get_players(
 ):
     """
-    GET /leaderboards
+    GET /leaderboards/overall
     """
 
     # request
-    request_url = f'{SERVER}/leaderboards'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
-    return Player.genList(response_dict)
+    request_url = f'{SERVER}/leaderboards/overall'
+    response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
+    soup = BeautifulSoup(response.content, "html.parser")
+    return Player.genList(soup, request_url)
 
 
-async def get_player(
+def get_player(
     # scoresaber ID
     playerId: float
 ):
@@ -32,6 +34,6 @@ async def get_player(
 
     # request
     request_url = f'{SERVER}/profile/{playerId}/overall/scores'
-    print(request_url)
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
-    return Player.gen(response_dict)
+    response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
+    soup = BeautifulSoup(response.content, "html.parser")
+    return Player.gen(soup)

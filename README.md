@@ -29,12 +29,10 @@ player_list = asyncio.run(scoresaber.get_players())
 #### accsaber
 ```python
 import BSAPI.accsaber as accsaber
-import asyncio
 
-# get a result of request 'https://accsaber.com/api/players'
-player_list = asyncio.run(accsaber.get_players())
+# get a result of request 'https://accsaber.com/leaderboards'
+player_list = accsaber.get_players()
 ```
-
 
 ## Reference
 ### BeatSaver API docs
