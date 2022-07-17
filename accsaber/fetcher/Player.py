@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from ...common import USER_AGENT
+import common
 from ..entity import Player
 
 
@@ -78,7 +78,7 @@ def extract_players(soup, url):
         if page is not 0:
             request_url = f'{url}?page={page+1}'
             response = requests.get(request_url, headers={
-                                    "User-Agent": USER_AGENT})
+                                    "User-Agent": common.USER_AGENT})
             soup = BeautifulSoup(response.content, "html.parser")
 
         num4page = len(soup.select('table > tbody > tr'))

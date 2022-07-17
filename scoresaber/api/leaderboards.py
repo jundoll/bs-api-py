@@ -2,7 +2,7 @@
 # load modules
 from requests_api import request
 
-from ...common import USER_AGENT
+import common
 from ..entity import (Difficulty, LeaderboardInfo, LeaderboardInfoCollection,
                       ScoreCollection)
 
@@ -74,7 +74,7 @@ async def get_leaderboards(
 
     # request
     request_url = f'{SERVER}/api/leaderboards{query}'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return LeaderboardInfoCollection.gen(response_dict)
 
 
@@ -88,7 +88,7 @@ async def get_leaderboard_info_by_id(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-id/{leaderboardId}/info'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return LeaderboardInfo.gen(response_dict)
 
 
@@ -117,7 +117,7 @@ async def get_leaderboard_info_by_hash(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-hash/{hash}/info{query}'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return LeaderboardInfo.gen(response_dict)
 
 
@@ -154,7 +154,7 @@ async def get_leaderboard_scores_by_id(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-id/{leaderboardId}/scores{query}'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return ScoreCollection.gen(response_dict)
 
 
@@ -199,7 +199,7 @@ async def get_leaderboard_scores_by_hash(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/by-hash/{hash}/scores{query}'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return ScoreCollection.gen(response_dict)
 
 
@@ -213,5 +213,5 @@ async def get_leaderboard_difficulties_by_hash(
 
     # request
     request_url = f'{SERVER}/api/leaderboard/get-difficulties/{hash}'
-    response_dict = request.get(request_url, user_agent=USER_AGENT)
+    response_dict = request.get(request_url, user_agent=common.USER_AGENT)
     return Difficulty.gen_list(response_dict)

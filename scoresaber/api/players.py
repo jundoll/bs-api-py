@@ -2,7 +2,7 @@
 # load modules
 from requests_api import request
 
-from ...common import USER_AGENT
+import common
 from ..entity import Player, PlayerCollection, PlayerScoreCollection
 
 # const
@@ -41,7 +41,7 @@ async def get_players(
 
     # request
     request_url = f'{SERVER}/api/players{query}'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return PlayerCollection.gen(response_dict)
 
 
@@ -68,7 +68,7 @@ async def get_players_count(
 
     # request
     request_url = f'{SERVER}/api/players/count{query}'
-    count_value = await request.get(request_url, user_agent=USER_AGENT)
+    count_value = await request.get(request_url, user_agent=common.USER_AGENT)
     return count_value
 
 
@@ -82,7 +82,7 @@ async def get_player_basic(
 
     # request
     request_url = f'{SERVER}/api/player/{playerId}/basic'
-    response_dict = request.get(request_url, user_agent=USER_AGENT)
+    response_dict = request.get(request_url, user_agent=common.USER_AGENT)
     return Player.gen(response_dict)
 
 
@@ -96,7 +96,7 @@ async def get_player_full(
 
     # request
     request_url = f'{SERVER}/api/player/{playerId}/full'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return Player.gen(response_dict)
 
 
@@ -133,5 +133,5 @@ async def get_player_scores(
 
     # request
     request_url = f'{SERVER}/api/player/{playerId}/scores{query}'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return PlayerScoreCollection.gen(response_dict)

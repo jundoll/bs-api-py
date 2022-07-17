@@ -2,7 +2,7 @@
 # load modules
 from requests_api import request
 
-from ...common import USER_AGENT
+import common
 from ..entity import SearchResponse
 
 # const
@@ -112,5 +112,5 @@ async def search_maps(
 
     # request
     request_url = f'{SERVER}/search/text/{page}{query}'
-    response_dict = await request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
     return SearchResponse.gen(response_dict)
