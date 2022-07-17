@@ -1,5 +1,6 @@
 
 # load modules
+from common import USER_AGENT
 from requests_api import request
 
 from ..entity import SearchResponse
@@ -12,7 +13,7 @@ SERVER = 'https://beatsaver.com/api'
 async def search_maps(
     # Options are a little weird, I may add another enum field in future to make this clearer.
     # true = both, false = only ai, null = no ai
-    automapper: bool = False,
+    automapper: str = '',
     # chroma
     chrome: bool = False,
     # cinema
@@ -62,7 +63,7 @@ async def search_maps(
 
     # prepare query
     query_list = []
-    if automapper:
+    if (automapper == 'true') or (automapper == 'false'):
         query_list.append(f'automapper={automapper}')
     if chrome:
         query_list.append(f'chrome=true')
@@ -111,5 +112,5 @@ async def search_maps(
 
     # request
     request_url = f'{SERVER}/search/text/{page}{query}'
-    response_dict = await request.get(request_url)
+    response_dict = await request.get(request_url, user_agent=USER_AGENT)
     return SearchResponse.gen(response_dict)
