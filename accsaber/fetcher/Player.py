@@ -2,8 +2,8 @@
 # load modules
 import requests
 from bs4 import BeautifulSoup
-from ...common import USER_AGENT
 
+from ...common import USER_AGENT
 from ..entity import Player
 
 

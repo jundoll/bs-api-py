@@ -1,8 +1,8 @@
 
 # load modules
-from common import USER_AGENT
 from requests_api import request
 
+from ...common import USER_AGENT
 from ..entity import (Difficulty, LeaderboardInfo, LeaderboardInfoCollection,
                       ScoreCollection)
 
