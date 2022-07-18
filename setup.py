@@ -16,6 +16,7 @@ setup(
         'BSAPI.accsaber': 'accsaber',
         'BSAPI.accsaber.api': 'accsaber/api',
         'BSAPI.accsaber.entity': 'accsaber/entity',
+        'BSAPI.accsaber.fetcher': 'accsaber/fetcher',
         'BSAPI.scoresaber': 'scoresaber',
         'BSAPI.scoresaber.api': 'scoresaber/api',
         'BSAPI.scoresaber.entity': 'scoresaber/entity'
