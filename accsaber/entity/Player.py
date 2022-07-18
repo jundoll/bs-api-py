@@ -70,7 +70,7 @@ def gen(soup):
         averageApPerMap = None
 
         # return
-        instance = Player.Player(
+        instance = Player(
             playerId=playerId,
             avatarUrl=avatarUrl,
             playerName=playerName,
@@ -120,7 +120,7 @@ def genList(soup, url):
                 # playerName
                 elems = soup.select(
                     f'table > tbody > tr:nth-child({i+1}) > td:nth-child(3) > a')
-                playerName = elems[0].contents[0]
+                playerName = str(elems[0].contents[0])
 
                 # rank
                 elems = soup.select(
@@ -136,7 +136,7 @@ def genList(soup, url):
                 elems = soup.select(
                     f'table > tbody > tr:nth-child({i+1}) > td:nth-child(8)')
                 if len(elems[0].contents) > 0:
-                    hmd = elems[0].contents[0]
+                    hmd = str(elems[0].contents[0])
                 else:
                     hmd = None
 
@@ -156,7 +156,7 @@ def genList(soup, url):
                 averageApPerMap = float(elems[0].contents[0].replace(',', ''))
 
                 # add
-                instance = Player.Player(
+                instance = Player(
                     playerId=playerId,
                     avatarUrl=avatarUrl,
                     playerName=playerName,
