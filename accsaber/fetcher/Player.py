@@ -1,10 +1,17 @@
 
 # load modules
+import os
+
 import requests
 from bs4 import BeautifulSoup
 
-import common
 from ..entity import Player
+
+# const
+if 'USER_AGENT' in os.environ.keys():
+    USER_AGENT = os.environ['USER_AGENT'].encode()
+else:
+    USER_AGENT = ''
 
 
 # definition
@@ -78,7 +85,7 @@ def extract_players(soup, url):
         if page is not 0:
             request_url = f'{url}?page={page+1}'
             response = requests.get(request_url, headers={
-                                    "User-Agent": common.USER_AGENT})
+                                    "User-Agent": USER_AGENT})
             soup = BeautifulSoup(response.content, "html.parser")
 
         num4page = len(soup.select('table > tbody > tr'))

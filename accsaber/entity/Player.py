@@ -2,8 +2,7 @@
 from dataclasses import dataclass
 from typing import Union
 
-from accsaber.fetcher.Player import extract_player, extract_players
-
+from ..fetcher import player
 
 # definition class
 @dataclass(frozen=True)
@@ -24,12 +23,12 @@ class Player:
 def gen(response):
 
     if response is not None:
-        instance = extract_player(response)
+        instance = player.extract_player(response)
         return instance
 
 
 def genList(response, url):
 
     if response is not None:
-        instances = extract_players(response, url)
+        instances = player.extract_players(response, url)
         return instances

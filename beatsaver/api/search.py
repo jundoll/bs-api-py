@@ -1,12 +1,17 @@
 
 # load modules
+import os
+
 from requests_api import request
 
-import common
 from ..entity import SearchResponse
 
 # const
 SERVER = 'https://beatsaver.com/api'
+if 'USER_AGENT' in os.environ.keys():
+    USER_AGENT = os.environ['USER_AGENT'].encode()
+else:
+    USER_AGENT = ''
 
 
 # definition
@@ -112,5 +117,5 @@ async def search_maps(
 
     # request
     request_url = f'{SERVER}/search/text/{page}{query}'
-    response_dict = await request.get(request_url, user_agent=common.USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=USER_AGENT)
     return SearchResponse.gen(response_dict)
