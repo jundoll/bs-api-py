@@ -1,5 +1,6 @@
 
 # load modules
+import asyncio
 import os
 
 import requests
@@ -16,7 +17,7 @@ else:
 
 
 # definition
-def get_players(
+async def get_players(
 ):
     """
     GET /leaderboards/overall
@@ -26,10 +27,11 @@ def get_players(
     request_url = f'{SERVER}/leaderboards/overall'
     response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
     soup = BeautifulSoup(response.content, "html.parser")
+    await asyncio.sleep(1)
     return Player.genList(soup, request_url)
 
 
-def get_player(
+async def get_player(
     # scoresaber ID
     playerId: float
 ):
@@ -41,4 +43,5 @@ def get_player(
     request_url = f'{SERVER}/profile/{playerId}/overall/scores'
     response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
     soup = BeautifulSoup(response.content, "html.parser")
+    await asyncio.sleep(1)
     return Player.gen(soup)
