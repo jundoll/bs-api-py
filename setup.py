@@ -2,11 +2,11 @@ from setuptools import setup
 
 setup(
     name='BSAPI',
-    version="0.4.1",
+    version="0.4.2",
     license='MIT',
     packages=[
         'BSAPI.beatsaver', 'BSAPI.beatsaver.api', 'BSAPI.beatsaver.entity',
-        'BSAPI.accsaber', 'BSAPI.accsaber.api', 'BSAPI.accsaber.entity', 'BSAPI.accsaber.fetcher',
+        'BSAPI.accsaber', 'BSAPI.accsaber.api', 'BSAPI.accsaber.entity',
         'BSAPI.scoresaber', 'BSAPI.scoresaber.api', 'BSAPI.scoresaber.entity'
     ],
     package_dir={
@@ -16,7 +16,6 @@ setup(
         'BSAPI.accsaber': 'accsaber',
         'BSAPI.accsaber.api': 'accsaber/api',
         'BSAPI.accsaber.entity': 'accsaber/entity',
-        'BSAPI.accsaber.fetcher': 'accsaber/fetcher',
         'BSAPI.scoresaber': 'scoresaber',
         'BSAPI.scoresaber.api': 'scoresaber/api',
         'BSAPI.scoresaber.entity': 'scoresaber/entity'
