@@ -1,15 +1,13 @@
 
 # load modules
-import asyncio
 import os
 
-import requests
-from bs4 import BeautifulSoup
+from requests_api import request
 
 from ..entity import Player
 
 # const
-SERVER = 'https://accsaber.com'
+SERVER = 'https://api.accsaber.com'
 if 'USER_AGENT' in os.environ.keys():
     USER_AGENT = os.environ['USER_AGENT'].encode()
 else:
@@ -20,15 +18,13 @@ else:
 async def get_players(
 ):
     """
-    GET /leaderboards/overall
+    GET /players
     """
 
     # request
-    request_url = f'{SERVER}/leaderboards/overall'
-    response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
-    soup = BeautifulSoup(response.content, "html.parser")
-    await asyncio.sleep(1)
-    return Player.fetchList(soup, request_url)
+    request_url = f'{SERVER}/players'
+    response = await request.get(request_url, user_agent=USER_AGENT)
+    return Player.genList(response)
 
 
 async def get_player(
@@ -36,12 +32,10 @@ async def get_player(
     playerId: float
 ):
     """
-    GET /profile/{playerId}/overall/scores
+    GET /players/{playerId}/scores
     """
 
     # request
     request_url = f'{SERVER}/profile/{playerId}/overall/scores'
-    response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
-    soup = BeautifulSoup(response.content, "html.parser")
-    await asyncio.sleep(1)
-    return Player.fetch(soup)
+    response = await request.get(request_url, user_agent=USER_AGENT)
+    return Player.gen(response)
