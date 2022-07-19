@@ -98,7 +98,7 @@ def genList(soup, url):
         for page in range(max_pages):
 
             # page 2 ~
-            if page is not 0:
+            if page > 0:
                 request_url = f'{url}?page={page+1}'
                 response = requests.get(request_url, headers={
                                         "User-Agent": USER_AGENT})
