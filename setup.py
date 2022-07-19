@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='BSAPI',
-    version="0.4.3",
+    version="0.4.4",
     license='MIT',
     packages=[
         'BSAPI.beatsaver', 'BSAPI.beatsaver.api', 'BSAPI.beatsaver.entity',

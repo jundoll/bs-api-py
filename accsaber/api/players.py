@@ -28,7 +28,7 @@ async def get_players(
     response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
     soup = BeautifulSoup(response.content, "html.parser")
     await asyncio.sleep(1)
-    return Player.genList(soup, request_url)
+    return Player.fetchList(soup, request_url)
 
 
 async def get_player(
@@ -44,4 +44,4 @@ async def get_player(
     response = requests.get(request_url, headers={"User-Agent": USER_AGENT})
     soup = BeautifulSoup(response.content, "html.parser")
     await asyncio.sleep(1)
-    return Player.gen(soup)
+    return Player.fetch(soup)

@@ -29,7 +29,38 @@ class Player:
 
 
 # definition function
-def gen(soup):
+def gen(response):
+
+    if response is not None:
+        instance = Player(
+            playerId=response.get('playerId'),
+            avatarUrl=response.get('avatarUrl'),
+            playerName=response.get('playerName'),
+            rank=response.get('rank'),
+            ap=response.get('ap'),
+            hmd=response.get('hmd'),
+            rankedPlays=response.get('rankedPlays'),
+            averageAcc=response.get('averageAcc'),
+            averageApPerMap=response.get('averageApPerMap')
+        )
+        return instance
+
+
+def genList(response):
+
+    if response is None:
+        return None
+    else:
+        if type(response) is list:
+            if len(response) == 0:
+                return []
+            else:
+                return [gen(v) for v in response]
+        elif type(response) is dict:
+            return [gen(response)]
+
+
+def fetch(soup):
 
     if soup is not None:
         # playerId
@@ -84,7 +115,7 @@ def gen(soup):
         return instance
 
 
-def genList(soup, url):
+def fetchList(soup, url):
 
     if soup is not None:
         # init
