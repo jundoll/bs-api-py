@@ -43,6 +43,9 @@ https://api.beatsaver.com/docs/
 https://docs.scoresaber.com/
 
 <!--
-### AccSaber github account
+### AccSaber github
 https://github.com/accsaber
 -->
+
+### BeatLeader API docs (github)
+https://github.com/BeatLeader/beatleader-server
