@@ -29,7 +29,7 @@ class LeaderboardInfo:
     positiveModifiers: bool
     plays: float
     dailyPlays: float
-    coverImage: float
+    coverImage: str
     playerScore: Union[Score.Score, None]
     difficulties: Union[List[Difficulty.Difficulty], List, None]
 
@@ -73,3 +73,14 @@ def gen_list(response):
             return []
         else:
             return [gen(v) for v in response]
+
+    if response is None:
+        return None
+    else:
+        if type(response) is list:
+            if len(response) == 0:
+                return []
+            else:
+                return [gen(v) for v in response]
+        elif type(response) is dict:
+            return [gen(response)]
