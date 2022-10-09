@@ -87,7 +87,7 @@ async def get_player_basic(
 
     # request
     request_url = f'{SERVER}/api/player/{playerId}/basic'
-    response_dict = request.get(request_url, user_agent=USER_AGENT)
+    response_dict = await request.get(request_url, user_agent=USER_AGENT)
     return Player.gen(response_dict)
 
 
