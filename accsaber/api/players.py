@@ -1,4 +1,3 @@
-
 # load modules
 import os
 
@@ -32,10 +31,10 @@ async def get_player(
     playerId: float
 ):
     """
-    GET /players/{playerId}/scores
+    GET /players/{playerId}
     """
 
     # request
-    request_url = f'{SERVER}/profile/{playerId}/overall/scores'
+    request_url = f'{SERVER}/players/{playerId}'
     response = await request.get(request_url, user_agent=USER_AGENT)
     return Player.gen(response)
