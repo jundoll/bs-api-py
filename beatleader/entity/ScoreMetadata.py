@@ -6,7 +6,7 @@ from dataclasses import dataclass
 # definition class
 @dataclass(frozen=True)
 class ScoreMetadata:
-    e
+    id: str
 
 
 # definition function
