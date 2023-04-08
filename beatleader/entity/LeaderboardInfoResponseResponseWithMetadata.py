@@ -16,9 +16,9 @@ class LeaderboardInfoResponseResponseWithMetadata:
 # definition function
 def gen(response):
     instance = LeaderboardInfoResponseResponseWithMetadata(
-        metadata=Metadata.gen(response.get('scoreStats')),
+        metadata=Metadata.gen(response.get('metadata')),
         data=LeaderboardInfoResponse.gen_list(
-            response.get('badges'))
+            response.get('data'))
     )
     return instance
 
