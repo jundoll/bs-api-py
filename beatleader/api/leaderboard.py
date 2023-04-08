@@ -4,7 +4,7 @@ import os
 
 from requests_api import request
 
-from ..entity import Player
+from ..entity import LeaderboardInfoResponseResponseWithMetadata
 
 # const
 SERVER = 'https://api.beatleader.xyz'
@@ -119,4 +119,4 @@ async def get_leaderboards(
     # request
     request_url = f'{SERVER}/leaderboards{query}'
     response = await request.get(request_url, user_agent=USER_AGENT)
-    return Player.gen(response)
+    return LeaderboardInfoResponseResponseWithMetadata.gen(response)
