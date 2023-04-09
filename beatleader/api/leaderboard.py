@@ -93,7 +93,7 @@ async def get_leaderboards(
         query_list.append(f'mytype={mytype}')
     if (stars_from > 0) and (stars_from <= 18):
         query_list.append(f'stars_from={stars_from}')
-    if (stars_from <= stars_to) and (stars_to > 0) and (techrating_to <= 18):
+    if (stars_from <= stars_to) and (stars_to > 0) and (stars_to <= 18):
         query_list.append(f'stars_to={stars_to}')
     if (accrating_from > 0) and (accrating_from <= 18):
         query_list.append(f'accrating_from={accrating_from}')
