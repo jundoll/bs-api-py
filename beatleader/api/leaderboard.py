@@ -118,5 +118,6 @@ async def get_leaderboards(
 
     # request
     request_url = f'{SERVER}/leaderboards{query}'
+    print(query)
     response = await request.get(request_url, user_agent=USER_AGENT)
     return LeaderboardInfoResponseResponseWithMetadata.gen(response)
