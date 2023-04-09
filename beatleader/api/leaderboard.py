@@ -16,10 +16,10 @@ else:
 
 # definition
 async def get_leaderboards(
-    #
+    # Default value : 1
     page: int = 1,
-    #
-    count: int = 1,
+    # Default value : 10
+    count: int = 10,
     #
     sortBy: str = '',
     #
@@ -32,11 +32,11 @@ async def get_leaderboards(
     mode: str = '',
     #
     mapType: int = 0,
-    #
+    # Available values : 0, 1, 2
     allTypes: int = 0,
-    #
+    # Available values : 0, 2, 4, 8, 16, 32
     mapRequirements: int = 0,
-    #
+    # Available values : 0, 1, 2
     allRequirements: int = 0,
     #
     mytype: str = '',
@@ -83,11 +83,11 @@ async def get_leaderboards(
         query_list.append(f'mode={mode}')
     if mapType > 0:
         query_list.append(f'mapType={mapType}')
-    if allTypes > 0:
+    if allTypes in [0, 1, 2]:
         query_list.append(f'allTypes={allTypes}')
-    if mapRequirements > 0:
+    if mapRequirements in [0, 2, 4, 8, 16, 32]:
         query_list.append(f'mapRequirements={mapRequirements}')
-    if allRequirements > 0:
+    if allRequirements in [0, 1, 2]:
         query_list.append(f'paallRequirementsge={allRequirements}')
     if mytype:
         query_list.append(f'mytype={mytype}')
