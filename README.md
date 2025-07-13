@@ -53,7 +53,7 @@ https://api.beatsaver.com/docs/
 https://docs.scoresaber.com/
 
 ### BeatLeader API docs
-https://api.beatleader.com/swagger/index.html
+https://api.beatleader.com/
 
 <!--
 ### AccSaber github
