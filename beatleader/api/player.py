@@ -7,7 +7,7 @@ from requests_api import request
 from ..entity import Player
 
 # const
-SERVER = 'https://api.beatleader.xyz'
+SERVER = 'https://api.beatleader.com'
 if 'USER_AGENT' in os.environ.keys():
     USER_AGENT = os.environ['USER_AGENT'].encode()
 else:
